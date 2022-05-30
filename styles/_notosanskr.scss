@@ -1,0 +1,71 @@
+// https://github.com/sangwoobae/noto-sans-korean-webfont
+$font-path: "fonts" !default;
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 100;
+  font-style: normal;
+  src: url("#{$font-path}/NotoSans-Thin.eot?") format("eot"),
+  url("#{$font-path}/NotoSans-Thin.otf") format("opentype"),
+  url("#{$font-path}/NotoSans-Thin.woff") format("woff"),
+  url("#{$font-path}/NotoSans-Thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 200;
+  font-style: normal;
+  src: url("#{$font-path}/NotoSans-Light.eot?") format("eot"),
+  url("#{$font-path}/NotoSans-Light.otf") format("opentype"),
+  url("#{$font-path}/NotoSans-Light.woff") format("woff"),
+  url("#{$font-path}/NotoSans-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 300;
+  font-style: normal;
+  src: url("#{$font-path}/NotoSans-DemiLight.eot?") format("eot"),
+  url("#{$font-path}/NotoSans-DemiLight.otf") format("opentype"),
+  url("#{$font-path}/NotoSans-DemiLight.woff") format("woff"),
+  url("#{$font-path}/NotoSans-DemiLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 400;
+  font-style: normal;
+  src: url("#{$font-path}/NotoSans-Regular.eot?") format("eot"),
+  url("#{$font-path}/NotoSans-Regular.otf") format("opentype"),
+  url("#{$font-path}/NotoSans-Regular.woff") format("woff"),
+  url("#{$font-path}/NotoSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 500;
+  font-style: normal;
+  src: url("#{$font-path}/NotoSans-Medium.eot?") format("eot"),
+  url("#{$font-path}/NotoSans-Medium.otf") format("opentype"),
+  url("#{$font-path}/NotoSans-Medium.woff") format("woff"),
+  url("#{$font-path}/NotoSans-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 700;
+  font-style: normal;
+  src: url("#{$font-path}/NotoSans-Black.eot?") format("eot"),
+  url("#{$font-path}/NotoSans-Black.otf") format("opentype"),
+  url("#{$font-path}/NotoSans-Black.woff") format("woff"),
+  url("#{$font-path}/NotoSans-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 900;
+  font-style: normal;
+  src: url("#{$font-path}/NotoSans-Bold.eot?") format("eot"),
+  url("#{$font-path}/NotoSans-Bold.otf") format("opentype"),
+  url("#{$font-path}/NotoSans-Bold.woff") format("woff"),
+  url("#{$font-path}/NotoSans-Bold.woff2") format("woff2");
+}

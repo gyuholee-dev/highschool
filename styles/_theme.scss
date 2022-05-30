@@ -1,0 +1,70 @@
+// theme
+@media (prefers-color-scheme: light) {
+  body {
+    --color-background: #{$grey-95};
+    --color-header: rgba(255,255,255, 0.65);
+    --color-section: #{$white};
+    --color-footer: #{$white};
+
+    --color-text: #{$grey-5};
+    --color-text-faint: #{$grey-15};
+    --color-text-emp: #{$black};
+    --color-text-link: #{$blue};
+    --color-border: #{$grey-75};
+    --color-border-emp: #{$sky};
+
+    --color-button: #{$grey-95};
+    --color-button-float: #{$white};
+    --color-deactive: #{$grey-90};
+    --color-input: white;
+    --color-input-autofill: #e0ebff;
+
+    --color-box-grey: #{$grey-95};
+    --color-box-blue: aliceblue;
+    --color-box-antique: antiquewhite;
+    --color-box-emp: rgba(41, 205, 255, 0.15);
+
+    --color-light: #{$white};
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    --color-background: #{$grey-10};
+    --color-header: rgba(0,0,0, 0.65);
+    --color-section: #{$grey-15};
+    --color-footer: rgba(0,0,0, 0.65);
+    
+    --color-text: #{$grey-80};
+    --color-text-faint: #{$grey-65};
+    --color-text-emp: #{$white};
+    --color-text-link: #{$blue};
+    --color-border: #{$grey-35};
+    --color-border-emp: #{$sky};
+    
+    --color-button: #{$grey-5};
+    --color-button-float: #{$grey-5};
+    --color-deactive: #{$grey-5};
+    --color-input: #{$black};
+    --color-input-autofill: #0d2a2b;
+    
+    --color-box-grey: #{$grey-10};
+    --color-box-blue: #0f1a24;
+    --color-box-antique: #24170f;
+    
+    --color-light: #{$grey-25};
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+header {
+  background-color: var(--color-header);
+}
+section {
+  background-color: var(--color-section);
+}
+footer {
+  background-color: var(--color-footer);
+}

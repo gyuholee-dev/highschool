@@ -1,0 +1,338 @@
+// 엘리먼트 기본값
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  @include font();
+  font-size: 18px;
+  line-height: 1.6;
+  word-break: break-all;
+}
+
+body {
+  @include flex(center, start, column);
+  width: 100%;
+  // max-width: $max-width;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+}
+
+header, footer, nav {
+  @include flex(center, center);
+  width: 100%;
+  position: relative;
+}
+
+main,
+article,
+section {
+  @include flex(start, center);
+  width: 100%;
+  position: relative;
+}
+
+aside {
+  @include flex(center, start, column);
+  position: relative;
+  width: 0;
+}
+
+#message {
+  width: 100%;
+  z-index: 999;
+  .log {
+    padding: 5px 10px;
+    background-color: gray;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+
+    &.info {
+      background-color: #5f5fff;
+    }
+
+    &.success {
+      background-color: green;
+    }
+
+    &.error {
+      background-color: red;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+form {
+  @include flex(start, center, column);
+  width: 100%;
+}
+
+table {
+  // width: 100%;
+  // width: stretch;
+  border-collapse: collapse;
+  * {
+    font-size: 1rem;
+  }
+  th, td {
+    padding: 5px;
+    &.flex, &.flex-row {
+      @include flex(center, space-between);
+    }
+    &.flex-column {
+      @include flex(start, start, column);
+    }
+  }
+  th {
+    text-align: center;
+    white-space: nowrap;
+  }
+  td {
+    text-align: left;
+  }
+  td.hr::before {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  input[type=text],
+  input[type=number],
+  input[type=password],
+  input[type=email],
+  textarea {
+    width: 100%;
+  }
+  textarea {
+    min-height: 120px;
+    resize: none;
+  }
+}
+
+.btn,
+button,
+input[type=submit],
+input[type=button],
+input[type=reset] {
+  @include font;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.12;
+  white-space: nowrap;
+  padding: 8px 12px;
+  min-width: 112px;
+  background-color: var(--color-button);
+  border: 1px solid rgba(black,0.35);
+  border-radius: 8px;
+  // box-shadow: inset 0 0 4px rgba(white, 0.25);
+  overflow: hidden;
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--color-text-emp);
+    border: 1px solid rgba(black,0.5);
+    text-shadow: 0 0 24px rgba(white, 0.5);
+    box-shadow: inset 0 0 48px rgba(black, 0.1);
+  }
+  &:disabled {
+    background-color: var(--color-button);
+    color: inherit;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.btn {
+  &.inline {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+    min-width: 96px;
+  }
+  &.min {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+    min-width: initial;
+    &:empty {
+      min-width: 47.5px;
+      min-height: 32px;
+    }
+  }
+  &.none {
+    padding: 0;
+    border: none;
+    background-color: initial;
+    box-shadow: none;
+    text-shadow: none;
+    min-width: initial;
+    line-height: inherit;
+  }
+  &.icon {
+    min-width: initial;
+  }
+  &.float {
+    text-align: center;
+    background-color: initial;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    min-width: initial;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    box-shadow: none !important;
+  }
+  &.close {
+    text-align: center;
+    background-color: initial;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    min-width: initial;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    box-shadow: none !important;
+  }
+
+  &.red {
+    background-color: $red;
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+  &.green, &.active {
+    background-color: $green;
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+  &.blue {
+    background-color: $blue;
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+input[type=text],
+input[type=number],
+input[type=password],
+input[type=email],
+select, textarea {
+  @include font_default;
+  padding: 5px;
+  border: 1px solid $grey-50;
+  border-radius: 6px;
+  background-color: var(--color-input);
+  color: var(--color-text);
+  &:focus-visible {
+    border: 1px solid var(--color-border-emp);
+    outline: 1px solid #0072ff;
+    box-shadow: 0 0 6px #0014ff;
+  }
+}
+input[readonly],
+input[disabled] {
+  background-color: var(--color-deactive);
+  opacity: 0.75;
+  color: var(--color-text-faint);
+  &:focus-visible {
+    border: 1px solid $grey-50;
+    outline: none;
+    box-shadow: none;
+  }
+}
+input[type=radio],
+input[type=checkbox] {
+  background-color: var(--color-input);
+  cursor: pointer;
+  margin-right: 5px;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  top: 0.15rem;
+}
+
+// 자동완성
+// https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/
+input, textarea, select {
+  &:-webkit-autofill {
+    caret-color: var(--color-text);
+    -webkit-text-fill-color: var(--color-text);
+    box-shadow: inset 0 0 0 1000px var(--color-input-autofill);
+  }
+  &:-webkit-autofill:focus-visible {
+    box-shadow: inset 0 0 0 1000px var(--color-input-autofill), 0 0 6px #0014ff;
+  }
+}
+// input:autofill::first-line {
+//   @include font;
+//   // font-size: 1rem !important;
+// }
+
+
+label {
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+i {
+  position: relative;
+}
+p, b, span, a, label,
+h1, h2, h3, h4, h5, h6 {
+  &.red {
+    color: red;
+  }
+  &.green {
+    color: green;
+  }
+  &.blue {
+    color: #5f5fff;
+  }
+}
+b, span, a, label, .btn {
+  &[class*=" xi-"], 
+  &[class^=xi-] {
+    &:before {
+      font-family: 'xeicon';
+      margin-right: 5px;
+      font-size: 1.15rem;
+      position: relative;
+      top: 0.075rem;
+    }
+  }
+}
+p, span, a, label, .btn, th, td,
+h1, h2, h3, h4, h5, h6 {
+  &.text-left {
+    text-align: left;
+  }
+  &.text-center {
+    text-align: center;
+  }
+  &.text-right {
+    text-align: right;
+  }
+}
