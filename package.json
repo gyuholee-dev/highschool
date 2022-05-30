@@ -1,0 +1,26 @@
+{
+  "name": "highschool",
+  "version": "0.0.1",
+  "description": "프론트엔드개발 수업 과제. 부산고등학교 웹사이트 https://school.busanedu.net/busan-h/main.do 메인페이지 카피.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leegyuho-dev/highschool.git"
+  },
+  "author": "GyuhoLee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leegyuho-dev/highschool/issues"
+  },
+  "homepage": "https://github.com/leegyuho-dev/highschool#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "rollup": "^2.75.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.52.1"
+  }
+}
