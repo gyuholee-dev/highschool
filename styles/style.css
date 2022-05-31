@@ -3922,11 +3922,18 @@ h1.text-right, h2.text-right, h3.text-right, h4.text-right, h5.text-right, h6.te
   text-align: right;
 }
 
-body {
+main {
   background: url(../images/bg/M_bg.png);
   background-repeat: repeat-x;
   background-position-x: center;
   background-position-y: calc(100% - 215px);
+  background-size: auto;
+}
+
+section.top {
+  background: #36a2ff url(../images/bg/M_visual_bg.png);
+  background-repeat: no-repeat;
+  background-position-x: center;
   background-size: auto;
 }
 
@@ -4104,6 +4111,13 @@ nav ul.menu > .item .submenu > .item > a {
   display: block;
   height: inherit;
   width: 100%;
+}
+
+main {
+  min-height: 1000px;
+}
+main section.top {
+  min-height: 460px;
 }
 
 @media (max-width: 799px) {
