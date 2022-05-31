@@ -4193,6 +4193,7 @@ main section.top .info #slider .buttons.nav {
 }
 main section.top .info #slider .buttons.nav .btn {
   position: relative;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
 }
 main section.top .info #slider .buttons.nav .btn.prev::before {
   content: url(../images/ui/ui_prev_L.png);
