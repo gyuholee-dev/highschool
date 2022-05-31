@@ -69,7 +69,7 @@ var scriptFiles = getSrc(jsPaths, 'js');
 // gulp css
 gulp.task('css', async()=>{
   return gulp.src(sassFiles)
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(concat('style.css'))
     .pipe(gulp.dest('./styles/'));
 });
@@ -89,7 +89,7 @@ gulp.task('js', async function () {
 // gulp css-min
 gulp.task('css-min', async()=>{
   return gulp.src(sassFiles)
-    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(concat('style.min.css'))
     // .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./styles/'));
