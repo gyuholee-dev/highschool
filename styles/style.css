@@ -3937,7 +3937,9 @@ section.top {
   background-size: auto;
 }
 
-header, main, footer {
+header,
+main,
+footer {
   width: 100%;
   position: relative;
   z-index: 1;
@@ -4117,7 +4119,134 @@ main {
   min-height: 1000px;
 }
 main section.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: nowrap;
   min-height: 460px;
+  padding: 20px 0;
+}
+main section.top .news {
+  height: 50px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+main section.top .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  height: 350px;
+}
+main section.top .info #imgslide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  min-width: 810px;
+  height: inherit;
+  margin-right: 20px;
+  flex-grow: 1;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+}
+main section.top .info #imgslide .imgs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: inherit;
+  position: relative;
+}
+main section.top .info #imgslide .imgs .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  width: 100%;
+  height: inherit;
+}
+main section.top .info #imgslide.active .imgs > .item {
+  transition: transform 0.5s;
+}
+main section.top .info #imgslide .buttons {
+  position: absolute;
+}
+main section.top .info #imgslide .buttons.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  top: 50%;
+  height: 0;
+  width: 100%;
+  z-index: 9;
+}
+main section.top .info #imgslide .buttons.nav .btn {
+  position: relative;
+}
+main section.top .info #imgslide .buttons.nav .btn.prev::before {
+  content: url(../images/ui/ui_prev_L.png);
+}
+main section.top .info #imgslide .buttons.nav .btn.prev:hover::before {
+  content: url(../images/ui/ui_prev_LH.png);
+}
+main section.top .info #imgslide .buttons.nav .btn.next::before {
+  content: url(../images/ui/ui_next_L.png);
+}
+main section.top .info #imgslide .buttons.nav .btn.next:hover::before {
+  content: url(../images/ui/ui_next_LH.png);
+}
+main section.top .info #imgslide .buttons.page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  height: 32px;
+  bottom: 10px;
+  z-index: 9;
+}
+main section.top .info #imgslide .buttons.page .btn {
+  height: inherit;
+  font-size: 12px;
+  padding: 3px;
+  margin: 0 5px;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: initial !important;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.65);
+}
+main section.top .info #imgslide .buttons.page .btn.active {
+  color: white !important;
+}
+main section.top .info #imgslide .buttons.page .btn.play {
+  padding: 0;
+  position: relative;
+  top: 2px;
+  filter: drop-shadow(0 0 1px black);
+}
+main section.top .info #imgslide .buttons.page .btn.play::before {
+  content: url(../images/ui/icon_stop.svg);
+}
+main section.top .info #imgslide .buttons.page .btn.stop::before {
+  content: url(../images/ui/icon_play.svg);
+}
+main section.top .info #imgslide .buttons.page .btn.dot::before {
+  content: "●";
+}
+main section.top .info #schedule {
+  width: 368px;
+  height: 100%;
+  background-color: #536dfe;
 }
 
 @media (max-width: 799px) {

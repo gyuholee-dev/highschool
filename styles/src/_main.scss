@@ -6,6 +6,7 @@ main {
   background-position-y: calc(100% - 215px);
   background-size: auto;
 }
+
 section.top {
   background: #36a2ff url(../images/bg/M_visual_bg.png);
   background-repeat: no-repeat;
@@ -15,7 +16,9 @@ section.top {
 }
 
 
-header, main, footer {
+header,
+main,
+footer {
   width: 100%;
   position: relative;
   z-index: 1;
@@ -29,9 +32,11 @@ header, main, footer {
   min-width: $max-width;
   margin: 0 auto;
 }
+
 header .wrapper {
   @include flex(center, space-between);
 }
+
 nav .wrapper {
   @include flex(center, space-between);
 }
@@ -44,32 +49,40 @@ header {
   border-bottom: 1px solid var(--color-border);
   white-space: nowrap;
   z-index: 99;
+
   .logo {
     margin-right: 15px;
   }
+
   .menu {
     @include flex(center, start);
+
     .item {
       padding: 3px;
       position: relative;
+
       &:not(:last-of-type) {
         margin-right: 10px;
+
         &::after {
           content: "•";
           position: absolute;
-          right:-8px;
+          right: -8px;
           opacity: 0.35;
         }
       }
+
       &:last-of-type {
         margin-right: 15px;
       }
     }
   }
+
   .search {
     @include flex(center, start);
     position: relative;
     width: 215px;
+
     >input[type=text] {
       width: 100%;
       height: 36px;
@@ -77,6 +90,7 @@ header {
       padding: 5px 15px;
       background-color: var(--color-input);
     }
+
     >button {
       height: 36px;
       width: 32px;
@@ -94,28 +108,33 @@ nav {
   border-bottom: 1px solid var(--color-border);
   z-index: 88;
   white-space: nowrap;
+
   .bg {
     background-color: var(--color-header);
     position: absolute;
     width: 100%;
-    height:  $height-nav - 1px;
+    height: $height-nav - 1px;
     z-index: 7;
   }
+
   .mobile {
     @include flex(center, space-between);
     min-height: 70px;
     padding: 0 10px;
     display: none;
     border-bottom: 1px solid var(--color-border);
+
     >button {
       height: 35px;
       width: 35px;
       font-size: 28px;
+
       &:hover {
         color: var(--color-text-link) !important;
       }
     }
   }
+
   ul.menu {
     >.item {
       @include flex(center, start, column);
@@ -124,16 +143,19 @@ nav {
       line-height: $height-nav - 15px;
       text-align: center;
       position: relative;
+
       &:hover {
         >a {
           color: var(--color-text-link);
           min-height: $height-nav - 7.5px;
         }
+
         .submenu {
           transform: translateY(0);
           z-index: 5;
         }
       }
+
       >a {
         display: block;
         height: inherit;
@@ -144,6 +166,7 @@ nav {
         position: relative;
         z-index: 9;
       }
+
       .submenu {
         position: absolute;
         top: $height-nav - 7.5px;
@@ -156,14 +179,17 @@ nav {
         transform: translateY(calc(-100% - 2px));
         transition: transform 0.25s;
         z-index: 4;
+
         >.item {
           width: 100%;
           padding: 0 10px;
           font-size: 14px;
           color: var(--color-text-faint);
+
           &:hover {
             background-color: var(--color-box-grey);
           }
+
           >a {
             display: block;
             height: inherit;
@@ -178,7 +204,119 @@ nav {
 // 메인
 main {
   min-height: 1000px;
+
   section.top {
+    @include flex(center, start, column);
     min-height: 460px;
+    padding: 20px 0;
+
+    .news {
+      height: 50px;
+      background-color: white;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      @include flex(center, center);
+      height: 350px;
+
+      #imgslide {
+        @include flex(center, center, column);
+        min-width: 810px;
+        height: inherit;
+        margin-right: 20px;
+        flex-grow: 1;
+        border: 1px solid rgba(black, 0.5);
+        overflow: hidden;
+        position: relative;
+        .imgs {
+          @include flex(center, center);
+          width: 100%;
+          height: inherit;
+          position: relative;
+          .item {
+            @include flex(center, center);
+            position: absolute;
+            width: 100%;
+            height: inherit;
+          }
+        }
+        &.active .imgs>.item {
+          transition: transform 0.5s;
+        }
+
+        .buttons {
+          position: absolute;
+          &.nav {
+            @include flex(center, space-between);
+            top: 50%;
+            height: 0;
+            width: 100%;
+            z-index: 9;
+            .btn {
+              position: relative;
+              &.prev {
+                // left: 0;
+                &::before {
+                  content: url(../images/ui/ui_prev_L.png);
+                }
+                &:hover::before {
+                  content: url(../images/ui/ui_prev_LH.png);
+                }
+              }
+              &.next {
+                // right: 0;
+                &::before {
+                  content: url(../images/ui/ui_next_L.png);
+                }
+                &:hover::before {
+                  content: url(../images/ui/ui_next_LH.png);
+                }
+              }
+            }
+          }
+
+          &.page {
+            @include flex(center, center);
+            height: 32px;
+            bottom: 10px;
+            z-index: 9;
+            .btn {
+              height: inherit;
+              font-size: 12px;
+              padding: 3px;
+              margin: 0 5px;
+              color: rgba(black, 0.5);
+              background-color: initial!important;
+              -webkit-text-stroke: 1px rgba(black, 0.65);
+              &.active {
+                color: white !important;
+              }
+              &.play {
+                padding: 0;
+                position: relative;
+                top: 2px;
+                filter: drop-shadow(0 0 1px black);
+              }
+              &.play::before {
+                content: url(../images/ui/icon_stop.svg);
+              }
+              &.stop::before {
+                content: url(../images/ui/icon_play.svg);
+              }
+              &.dot::before {
+                content: "●";
+              }
+            }
+          }
+        }
+      }
+
+      #schedule {
+        width: 368px;
+        height: 100%;
+        background-color: #536dfe;
+      }
+    }
   }
 }

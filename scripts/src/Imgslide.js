@@ -6,24 +6,31 @@ export class ImgSlide {
     this.imgWidth = imgWidth;
     this.margin = margin;
     this.delay = delay;
-    // this.imgs = imgslide.querySelectorAll('.imgs>.item');
-    // this.imgCnt = imgs.length;
+    this.imgs = imgslide.querySelectorAll('.imgs>.item');
+    this.imgCnt = this.imgs.length;
 
-    
-    // this.repeat;
-    // this.ci = Math.floor(Math.random() * imgCnt - 1); // 현재 가운데 이미지 랜덤
+    this.state = 'stop';
+    this.repeat;
+    this.ci = Math.floor(Math.random() * this.imgCnt); // 현재 가운데 이미지 랜덤
 
-    // this.navs = imgslide.querySelectorAll('.buttons.nav>button');
-    // this.play = imgslide.querySelectorAll('.buttons.page>button.play');
-    // this.dots = imgslide.querySelectorAll('.buttons.page>button.dot');
+    this.btnPrev = imgslide.querySelector('.buttons.nav>button.prev');
+    this.btnNext = imgslide.querySelector('.buttons.nav>button.next');
+    this.btnPlay = imgslide.querySelector('.buttons.page>button.play');
+    this.btnDots = imgslide.querySelectorAll('.buttons.page>button.dot');
   }
 
   test() {
-    console.log(imgslide);
+    console.log(this);
   }
-  /* 
+  
   // 슬라이드
   slide() {
+    const imgCnt = this.imgCnt;
+    const imgs = this.imgs;
+    const ci = this.ci;
+    const imgWidth = this.imgWidth;
+    const margin = this.margin;
+    const btnDots = this.btnDots;
     for (let i = 0; i < imgCnt; i++) {
       let img = imgs[i];
       let d = i - ci;
@@ -33,60 +40,109 @@ export class ImgSlide {
         d -= imgCnt;
       }
       let pos = (d * imgWidth) + (d * margin);
-      img.css({
-        'transform': `translateX(${pos}px)`,
-        'z-index': (0 - Math.abs(d)) + 2
-      });
+      img.style.transform = `translateX(${pos}px)`;
+      img.style.zIndex = (0 - Math.abs(d)) + 2;
     }
-    $($dots[ci]).addClass('active');
-    $($dots[ci]).siblings().removeClass('active');
+    btnDots.forEach((btn, i)=>{
+      btn.classList.remove('active');
+    });
+    btnDots[ci].classList.add('active');
   }
 
   // 시작
   play(to = true) {
+    const imgCnt = this.imgCnt;
+    const btnPlay = this.btnPlay;
+    const delay = this.delay;
     if (to == true) {
-      $play.removeClass('stop');
-      clearInterval(repeat);
-      repeat = setInterval(()=>{
-        ci++;
-        if (ci >= imgCnt) {
-          ci = 0;
+      btnPlay.classList.remove('stop');
+      clearInterval(this.repeat);
+      this.repeat = setInterval(()=>{
+        this.ci++;
+        if (this.ci >= imgCnt) {
+          this.ci = 0;
         }
-        slide();
+        this.slide();
       }, delay);
     } else {
-      $play.addClass('stop');
-      clearInterval(repeat);
+      btnPlay.classList.add('stop');
+      clearInterval(this.repeat);
     }
   }
 
   // 재시작
   replay() {
-    play(false);
-    slide();
+    this.play(false);
+    this.slide();
     setTimeout(() => {
-      play(true);
-    }, delay);
+      this.play(true);
+    }, this.delay);
   }
 
   // 이전
   prev() {
-    ci--;
-    if (ci < 0) {
-      ci = imgCnt - 1;
+    const imgCnt = this.imgCnt;
+    this.ci--;
+    if (this.ci < 0) {
+      this.ci = imgCnt - 1;
     }
-    replay();
+    this.replay();
   }
 
   // 다음
   next() {
-    ci++;
-    if (ci >= imgCnt) {
-      ci = 0;
+    const imgCnt = this.imgCnt;
+    this.ci++;
+    if (this.ci >= imgCnt) {
+      this.ci = 0;
     }
-    replay();
+    this.replay();
   }
- */
-  // -------------------------------------------------------
 
+  // 슬라이드 시작
+  async start() {
+    this.state = 'play';
+    this.slide();
+    await HS.timeout(300);
+    this.imgslide.classList.add('active');
+    this.play(true);
+    this.setBtnEvent();
+  }
+
+  // -------------------------------------------------------
+  // 컨트롤
+
+  setBtnEvent() {
+    // 버튼 이전
+    this.btnPrev.addEventListener('click', ()=>this.prev());
+    // 버튼 다음
+    this.btnNext.addEventListener('click', ()=>this.next());
+
+    // 버튼 재생 정지
+    this.btnPlay.addEventListener('click', ()=>{
+      if (this.btnPlay.classList.contains('stop')) {
+        this.play(true);
+        this.imgslide.addEventListener('mouseenter', stopEvent);
+        this.imgslide.addEventListener('mouseleave', playEvent);
+      } else {
+        this.play(false);
+        this.imgslide.removeEventListener('mouseenter', stopEvent);
+        this.imgslide.removeEventListener('mouseleave', playEvent);
+      }
+    });
+
+    // 버튼 도트
+    this.btnDots.forEach((btn, i)=>{
+      btn.addEventListener('click', ()=>{
+        this.ci = i;
+        this.replay();
+      });
+    });
+
+    // imgslide 호버
+    let playEvent = ()=>this.play(true);
+    let stopEvent = ()=>this.play(false);
+    this.imgslide.addEventListener('mouseenter', stopEvent);
+    this.imgslide.addEventListener('mouseleave', playEvent);
+  }
 }

@@ -12,8 +12,9 @@ const DOMLoaded = async()=>{
   
   // 이미지슬라이드
   const imgslide = document.querySelector('#imgslide');
-  const ImgSlide = new HS.ImgSlide(imgslide);
+  const ImgSlide = new HS.ImgSlide(imgslide, 810, 20, 2500);
   ImgSlide.test();
+  ImgSlide.start();
 
 }
 const WindowLoaded = async()=>{
