@@ -3542,7 +3542,6 @@ i {
 }
 body {
   background-color: var(--color-background);
-  background: url(../images/bg/M_bg.png) no-repeat center 93%;
   color: var(--color-text);
 }
 
@@ -3923,6 +3922,14 @@ h1.text-right, h2.text-right, h3.text-right, h4.text-right, h5.text-right, h6.te
   text-align: right;
 }
 
+body {
+  background: url(../images/bg/M_bg.png);
+  background-repeat: repeat-x;
+  background-position-x: center;
+  background-position-y: calc(100% - 215px);
+  background-size: auto;
+}
+
 header, main, footer {
   width: 100%;
   position: relative;
@@ -4108,7 +4115,8 @@ nav ul.menu > .item .submenu > .item > a {
   header {
     display: none;
   }
-
+}
+@media (max-width: 799px) {
   nav {
     display: flex;
     flex-direction: column;

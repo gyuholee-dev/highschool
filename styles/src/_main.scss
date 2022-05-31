@@ -1,4 +1,11 @@
 // main
+body {
+  background: url(../images/bg/M_bg.png);
+  background-repeat: repeat-x;
+  background-position-x: center;
+  background-position-y: calc(100% - 215px);
+  background-size: auto;
+}
 
 header, main, footer {
   width: 100%;
