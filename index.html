@@ -5,10 +5,159 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="./scripts/script.js"></script>
 </head>
 <body>
+
+  <header>
+    <div class="wrapper">
+      <a class="logo" href="index.html">
+        <img src="./images/logo/logo.png" alt="부산고등학교">
+      </a>
+      <ul class="menu">
+        <li class="item"><a href="#" title="홈">홈</a></li>
+        <li class="item"><a href="#" title="로그인">로그인</a></li>
+        <li class="item"><a href="#" title="회원가입">회원가입</a></li>
+        <li class="item"><a href="#" title="사이트맵">사이트맵</a></li>
+        <form id="searchBox" class="search">
+          <input type="text" name="search" placeholder="검색어를 입력하세요.">
+          <button class="btn none" type="submit"><i class="xi-search"></i></button>
+        </form>
+      </ul>
+    </div>
+  </header>
   
+  <nav>
+    <div id="navdimm" class="bg"></div>
+    <div class="wrapper mobile">
+      <button class="btn none menu" type="button" onclick="HS.toggleMenu(mainmenu, this)"><i class="xi-bars"></i></button>
+      <a class="logo" href="index.html">
+        <img src="./images/logo/logo.png" alt="부산고등학교">
+      </a>
+      <button class="btn none search" type="button" onclick="return false"><i class="xi-search"></i></button>
+    </div>
+    <ul id="mainmenu" class="wrapper menu">
+      <li class="item" onclick="HS.toggleSubMenu(this)">
+        <a href="#" title="학교소개">학교소개</a>
+        <ul class="submenu">
+          <li class="item"><a href="#" title="학교장인사말">학교장인사말</a></li>
+          <li class="item"><a href="#" title="학교연혁">학교연혁</a></li>
+          <li class="item"><a href="#" title="교훈 및 학교 상징">교훈 및 학교 상징</a></li>
+          <li class="item"><a href="#" title="교가">교가</a></li>
+          <li class="item"><a href="#" title="학교시설배치">학교시설배치</a></li>
+          <li class="item"><a href="#" title="교직원 소개">교직원 소개</a></li>
+          <li class="item"><a href="#" title="학교현황">학교현황</a></li>
+          <li class="item"><a href="#" title="찾아오시는 길">찾아오시는 길</a></li>
+        </ul>
+      </li>
+      <li class="item" onclick="HS.toggleSubMenu(this)">
+        <a href="#" title="교육활동">교육활동</a>
+        <ul class="submenu">
+          <li class="item"><a href="#" title="교육목표">교육목표</a></li>
+          <li class="item"><a href="#" title="교육계획서">교육계획서</a></li>
+          <li class="item"><a href="#" title="학교내규">학교내규</a></li>
+          <li class="item"><a href="#" title="교육과정편성">교육과정편성</a></li>
+          <li class="item"><a href="#" title="행사및일정">행사및일정</a></li>
+          <li class="item"><a href="#" title="청조사진첩">청조사진첩</a></li>
+        </ul>
+      </li>
+      <li class="item" onclick="HS.toggleSubMenu(this)">
+        <a href="#" title="알림마당">알림마당</a>
+        <ul class="submenu">
+          <li class="item"><a href="#" title="공지사항">공지사항</a></li>
+          <li class="item"><a href="#" title="정보공개목록">정보공개목록</a></li>
+          <li class="item"><a href="#" title="열린게시판">열린게시판</a></li>
+          <li class="item"><a href="#" title="학교알리미">학교알리미</a></li>
+          <li class="item"><a href="#" title="신문고(비공개)">신문고(비공개)</a></li>
+          <li class="item"><a href="#" title="가정통신문">가정통신문</a></li>
+          <li class="item"><a href="#" title="급식실">급식실</a></li>
+          <li class="item"><a href="#" title="보건실">보건실</a></li>
+          <li class="item"><a href="#" title="청렴자료실">청렴자료실</a></li>
+          <li class="item"><a href="#" title="선생님방">선생님방</a></li>
+        </ul>
+      </li>
+      <li class="item" onclick="HS.toggleSubMenu(this)">
+        <a href="#" title="학생생활">학생생활</a>
+        <ul class="submenu">
+          <li class="item"><a href="#" title="생활지도">생활지도</a></li>
+          <li class="item"><a href="#" title="학교폭력예방게시판">학교폭력예방게시판</a></li>
+          <li class="item"><a href="#" title="봉사활동">봉사활동</a></li>
+        </ul>
+      </li>
+      <li class="item" onclick="HS.toggleSubMenu(this)">
+        <a href="#" title="기숙사">기숙사</a>
+        <ul class="submenu">
+          <li class="item"><a href="#" title="기숙사소개">기숙사소개</a></li>
+          <li class="item"><a href="#" title="기숙사운영규정">기숙사운영규정</a></li>
+          <li class="item"><a href="#" title="공지사항">공지사항</a></li>
+          <li class="item"><a href="#" title="기숙사Q&A">기숙사Q&A</a></li>
+        </ul>
+      </li>
+      <li class="item" onclick="HS.toggleSubMenu(this)">
+        <a href="#" title="진로·상담·학부모">진로·상담·학부모</a>
+        <ul class="submenu">
+          <li class="item"><a href="#" title="진로진학 자료실">진로진학 자료실</a></li>
+          <li class="item"><a href="#" title="진로체험활동">진로체험활동</a></li>
+          <li class="item"><a href="#" title="Wee 클래스">Wee 클래스</a></li>
+          <li class="item"><a href="#" title="학부모교실">학부모교실</a></li>
+        </ul>
+      </li>
+      <li class="item" onclick="HS.toggleSubMenu(this)">
+        <a href="#" title="청조학습방">청조학습방</a>
+        <ul class="submenu">
+          <li class="item"><a href="#" title="교과교육 자료실">교과교육 자료실</a></li>
+          <li class="item"><a href="#" title="인성교육방">인성교육방</a></li>
+          <li class="item"><a href="#" title="방과 후 학교">방과 후 학교</a></li>
+        </ul>
+      </li>
+      <li class="item" onclick="HS.toggleSubMenu(this)">
+        <a href="#" title="과학중점·영재학급">과학중점·영재학급</a>
+        <ul class="submenu">
+          <li class="item"><a href="#" title="과학중점학교">과학중점학교</a></li>
+          <li class="item"><a href="#" title="영재학급">영재학급</a></li>
+        </ul>
+      </li>
+      <li class="item" onclick="HS.toggleSubMenu(this)">
+        <a href="#" title="야구부">야구부</a>
+        <ul class="submenu">
+          <li class="item"><a href="#" title="야구부 운영">야구부 운영</a></li>
+          <li class="item"><a href="#" title="야구부 조직도">야구부 조직도</a></li>
+          <li class="item"><a href="#" title="야구부 전적">야구부 전적</a></li>
+          <li class="item"><a href="#" title="야구화보집">야구화보집</a></li>
+          <li class="item"><a href="#" title="응원가">응원가</a></li>
+          <li class="item"><a href="#" title="고교야구 대회 일정표">고교야구 대회 일정표</a></li>
+          <li class="item"><a href="#" title="2019 야구부 주말리그 일정표">2019 야구부 주말리그 일정표</a></li>
+        </ul>
+      </li>
+      <li class="item" onclick="HS.toggleSubMenu(this)">
+        <a href="#" title="청조인마당">청조인마당</a>
+        <ul class="submenu">
+          <li class="item"><a href="#" title="역대교장선생님">역대교장선생님</a></li>
+          <li class="item"><a href="#" title="청조 역사관">청조 역사관</a></li>
+          <li class="item"><a href="#" title="부산중·고총동창회">부산중·고총동창회</a></li>
+          <li class="item"><a href="#" title="부산고 발전위원회">부산고 발전위원회</a></li>
+        </ul>
+      </li>
+      <li class="item" onclick="HS.toggleSubMenu(this)">
+        <a href="#" title="정보공개">정보공개</a>
+        <ul class="submenu">
+          <li class="item"><a href="#" title="정보공개제도안내">정보공개제도안내</a></li>
+          <li class="item"><a href="#" title="정보공개청구">정보공개청구</a></li>
+          <li class="item"><a href="#" title="사전공표대상">사전공표대상</a></li>
+          <li class="item"><a href="#" title="비공개대상정보 세부기준">비공개대상정보 세부기준</a></li>
+          <li class="item"><a href="#" title="정보목록">정보목록</a></li>
+          <li class="item"><a href="#" title="개인정보보호">개인정보보호</a></li>
+          <li class="item"><a href="#" title="학교운영위원회">학교운영위원회</a></li>
+          <li class="item"><a href="#" title="서비스헌장">서비스헌장</a></li>
+          <li class="item"><a href="#" title="수익자부담경비">수익자부담경비</a></li>
+          <li class="item"><a href="#" title="학교발전기금">학교발전기금</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  <main></main>
+  <footer></footer>
 </body>
 </html>

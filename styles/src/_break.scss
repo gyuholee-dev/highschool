@@ -1,12 +1,113 @@
 // breakpoints
-@include breakpoint(960) {
+@include breakpoint(800) {
+  .wrapper {
+    width: 100%;
+    min-width: initial;
+  }
 
+  header {
+    display: none;
+  }
+  nav {
+    @include flex(center, start, column);
+    height: 70px;
+    .bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(black, 0.5);
+      z-index: 7;
+      opacity: 0;
+      display: none;
+      transition: opacity 0.25s;
+      &.show {
+        display: block;
+      }
+      &.dimm {
+        opacity: 1;
+      }
+    }
+    .mobile {
+      display: flex;
+      z-index: 9;
+      background-color: var(--color-header);
+    }
+    ul.menu {
+      @include flex(center, start, column);
+      background-color: #30394a;
+      color: white;
+      width: initial;
+      position: relative;
+      top: 0;
+      height: fit-content;
+      width: 100%;
+      transform: translateY(-100%);
+      transition: transform 0.25s;
+      z-index: 8;
+      display: none;
+      &.show {
+        display: flex;
+      }
+      &.open {
+        transform: translateY(0);
+      }
+      >.item {
+        flex-grow: 0;
+        height: fit-content;
+        width: calc(100% - 30px);
+        line-height: 45px;
+        &.active {
+          >a {
+            border-bottom: 2px solid $sky;
+          }
+          +.item {
+            border-top: 2px solid $sky;
+          }
+        }
+        &:not(:last-of-type) {
+          border-bottom: 1px solid rgba(white, 0.25);
+        }
+        &:hover {
+          >a {
+            background-color: rgba($sky, 0.25);
+            color: white;
+          }
+        }
+        >a {
+          // font-size: 18px;
+          color: white;
+        }
+        .submenu {
+          // display: none;
+          position: relative;
+          top: 0;
+          transform: initial;
+          width: calc(100% - 25px);
+          background-color: inherit;
+          border: none;
+          padding: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.25s;
+          &.open {
+            max-height: 800px;
+          }
+          >.item {
+            padding: 0;
+            color: inherit !important;
+            &:hover {
+              background-color: rgba(white, 0.15);
+              // >a {
+                
+              // }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-@include breakpoint(768) {
-
-}
-
-@include breakpoint(640) {
+@include breakpoint(580) {
 
 }

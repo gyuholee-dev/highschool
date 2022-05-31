@@ -1,1 +1,164 @@
 // main
+
+header, main, footer {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper {
+  height: inherit;
+  // width: 100%;
+  // max-width: $max-width;
+  width: $max-width;
+  min-width: $max-width;
+  margin: 0 auto;
+}
+header .wrapper {
+  @include flex(center, space-between);
+}
+nav .wrapper {
+  @include flex(center, space-between);
+}
+
+
+
+
+
+// --------------------------------------------------------------------
+// 헤더
+header {
+  height: 70px;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+  z-index: 99;
+  .logo {
+    margin-right: 15px;
+  }
+  .menu {
+    @include flex(center, start);
+    .item {
+      padding: 3px;
+      position: relative;
+      &:not(:last-of-type) {
+        margin-right: 10px;
+        &::after {
+          content: "•";
+          position: absolute;
+          right:-8px;
+          opacity: 0.35;
+        }
+      }
+      &:last-of-type {
+        margin-right: 15px;
+      }
+    }
+  }
+  .search {
+    @include flex(center, start);
+    position: relative;
+    width: 215px;
+    >input[type=text] {
+      width: 100%;
+      height: 36px;
+      border-radius: 20px;
+      padding: 5px 15px;
+      background-color: var(--color-input);
+    }
+    >button {
+      height: 36px;
+      width: 32px;
+      position: absolute;
+      right: 1px;
+      font-size: 24px;
+      color: var(--color-text-link) !important;
+    }
+  }
+}
+
+// 내비게이션 메뉴
+nav {
+  height: $height-nav;
+  border-bottom: 1px solid var(--color-border);
+  z-index: 88;
+  white-space: nowrap;
+  .bg {
+    background-color: var(--color-header);
+    position: absolute;
+    width: 100%;
+    height:  $height-nav - 1px;
+    z-index: 7;
+  }
+  .mobile {
+    @include flex(center, space-between);
+    min-height: 70px;
+    padding: 0 10px;
+    display: none;
+    border-bottom: 1px solid var(--color-border);
+    >button {
+      height: 35px;
+      width: 35px;
+      font-size: 28px;
+      &:hover {
+        color: var(--color-text-link) !important;
+      }
+    }
+  }
+  ul.menu {
+    >.item {
+      @include flex(center, start, column);
+      height: $height-nav - 15px;
+      flex-grow: 1;
+      line-height: $height-nav - 15px;
+      text-align: center;
+      position: relative;
+      &:hover {
+        >a {
+          color: var(--color-text-link);
+          min-height: $height-nav - 7.5px;
+        }
+        .submenu {
+          transform: translateY(0);
+          z-index: 5;
+        }
+      }
+      >a {
+        display: block;
+        height: inherit;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--color-text-faint);
+        position: relative;
+        z-index: 9;
+      }
+      .submenu {
+        position: absolute;
+        top: $height-nav - 7.5px;
+        line-height: 40px;
+        border: 2px solid var(--color-border-emp);
+        background-color: var(--color-header);
+        padding: 10px 0;
+        width: max-content;
+        min-width: 160px;
+        transform: translateY(calc(-100% - 2px));
+        transition: transform 0.25s;
+        z-index: 4;
+        >.item {
+          width: 100%;
+          padding: 0 10px;
+          font-size: 14px;
+          color: var(--color-text-faint);
+          &:hover {
+            background-color: var(--color-box-grey);
+          }
+          >a {
+            display: block;
+            height: inherit;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

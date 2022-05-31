@@ -1,13 +1,13 @@
 // theme
 @media (prefers-color-scheme: light) {
   body {
-    --color-background: #{$grey-95};
-    --color-header: rgba(255,255,255, 0.65);
+    --color-background: #{$white};
+    --color-header: #{$white};
     --color-section: #{$white};
     --color-footer: #{$white};
 
     --color-text: #{$grey-5};
-    --color-text-faint: #{$grey-15};
+    --color-text-faint: #{$grey-20};
     --color-text-emp: #{$black};
     --color-text-link: #{$blue};
     --color-border: #{$grey-75};
@@ -16,7 +16,7 @@
     --color-button: #{$grey-95};
     --color-button-float: #{$white};
     --color-deactive: #{$grey-90};
-    --color-input: white;
+    --color-input: #{$grey-95};
     --color-input-autofill: #e0ebff;
 
     --color-box-grey: #{$grey-95};
@@ -57,6 +57,7 @@
 
 body {
   background-color: var(--color-background);
+  background: url(../images/bg/M_bg.png) no-repeat center 93%;
   color: var(--color-text);
 }
 header {

@@ -9,8 +9,8 @@
 
 html {
   @include font();
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.5;
   word-break: break-all;
 }
 
@@ -181,7 +181,7 @@ input[type=reset] {
     box-shadow: none;
     text-shadow: none;
     min-width: initial;
-    line-height: inherit;
+    line-height: 1;
   }
   &.icon {
     min-width: initial;
@@ -217,10 +217,10 @@ input[type=reset] {
     }
   }
   &.green, &.active {
-    background-color: $green;
+    background-color: $sky;
     color: white;
     &:hover {
-      color: white;
+      color: white !important;
     }
   }
   &.blue {
