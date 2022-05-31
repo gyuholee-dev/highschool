@@ -11,9 +11,8 @@ const DOMLoaded = async()=>{
   // console.log("DOM LOADED");
   
   // 이미지슬라이드
-  const imgslide = document.querySelector('#imgslide');
-  const ImgSlide = new HS.ImgSlide(imgslide, 810, 20, 2500);
-  ImgSlide.test();
+  const slider = document.querySelector('#slider');
+  const ImgSlide = new HS.ImgSlide(slider, 810, 20, 2500);
   ImgSlide.start();
 
 }

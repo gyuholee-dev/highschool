@@ -4140,7 +4140,7 @@ main section.top .info {
   flex-wrap: nowrap;
   height: 350px;
 }
-main section.top .info #imgslide {
+main section.top .info #slider {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4154,7 +4154,7 @@ main section.top .info #imgslide {
   overflow: hidden;
   position: relative;
 }
-main section.top .info #imgslide .imgs {
+main section.top .info #slider .imgs {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -4164,7 +4164,7 @@ main section.top .info #imgslide .imgs {
   height: inherit;
   position: relative;
 }
-main section.top .info #imgslide .imgs .item {
+main section.top .info #slider .imgs .item {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -4174,13 +4174,13 @@ main section.top .info #imgslide .imgs .item {
   width: 100%;
   height: inherit;
 }
-main section.top .info #imgslide.active .imgs > .item {
+main section.top .info #slider.active .imgs > .item {
   transition: transform 0.5s;
 }
-main section.top .info #imgslide .buttons {
+main section.top .info #slider .buttons {
   position: absolute;
 }
-main section.top .info #imgslide .buttons.nav {
+main section.top .info #slider .buttons.nav {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -4191,22 +4191,22 @@ main section.top .info #imgslide .buttons.nav {
   width: 100%;
   z-index: 9;
 }
-main section.top .info #imgslide .buttons.nav .btn {
+main section.top .info #slider .buttons.nav .btn {
   position: relative;
 }
-main section.top .info #imgslide .buttons.nav .btn.prev::before {
+main section.top .info #slider .buttons.nav .btn.prev::before {
   content: url(../images/ui/ui_prev_L.png);
 }
-main section.top .info #imgslide .buttons.nav .btn.prev:hover::before {
+main section.top .info #slider .buttons.nav .btn.prev:hover::before {
   content: url(../images/ui/ui_prev_LH.png);
 }
-main section.top .info #imgslide .buttons.nav .btn.next::before {
+main section.top .info #slider .buttons.nav .btn.next::before {
   content: url(../images/ui/ui_next_L.png);
 }
-main section.top .info #imgslide .buttons.nav .btn.next:hover::before {
+main section.top .info #slider .buttons.nav .btn.next:hover::before {
   content: url(../images/ui/ui_next_LH.png);
 }
-main section.top .info #imgslide .buttons.page {
+main section.top .info #slider .buttons.page {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -4216,7 +4216,7 @@ main section.top .info #imgslide .buttons.page {
   bottom: 10px;
   z-index: 9;
 }
-main section.top .info #imgslide .buttons.page .btn {
+main section.top .info #slider .buttons.page .btn {
   height: inherit;
   font-size: 12px;
   padding: 3px;
@@ -4225,22 +4225,22 @@ main section.top .info #imgslide .buttons.page .btn {
   background-color: initial !important;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.65);
 }
-main section.top .info #imgslide .buttons.page .btn.active {
+main section.top .info #slider .buttons.page .btn.active {
   color: white !important;
 }
-main section.top .info #imgslide .buttons.page .btn.play {
+main section.top .info #slider .buttons.page .btn.play {
   padding: 0;
   position: relative;
   top: 2px;
   filter: drop-shadow(0 0 1px black);
 }
-main section.top .info #imgslide .buttons.page .btn.play::before {
+main section.top .info #slider .buttons.page .btn.play::before {
   content: url(../images/ui/icon_stop.svg);
 }
-main section.top .info #imgslide .buttons.page .btn.stop::before {
+main section.top .info #slider .buttons.page .btn.stop::before {
   content: url(../images/ui/icon_play.svg);
 }
-main section.top .info #imgslide .buttons.page .btn.dot::before {
+main section.top .info #slider .buttons.page .btn.dot::before {
   content: "●";
 }
 main section.top .info #schedule {

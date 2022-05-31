@@ -220,7 +220,7 @@ main {
       @include flex(center, center);
       height: 350px;
 
-      #imgslide {
+      #slider {
         @include flex(center, center, column);
         min-width: 810px;
         height: inherit;

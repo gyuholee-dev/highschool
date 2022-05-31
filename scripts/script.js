@@ -125,22 +125,22 @@
   // 이미지슬라이드
   class ImgSlide {
 
-    constructor(imgslide, imgWidth=1240, margin=20, delay=2500) {
-      this.imgslide = imgslide;
+    constructor(slider, imgWidth=1240, margin=20, delay=2500) {
+      this.slider = slider;
       this.imgWidth = imgWidth;
       this.margin = margin;
       this.delay = delay;
-      this.imgs = imgslide.querySelectorAll('.imgs>.item');
+      this.imgs = slider.querySelectorAll('.imgs>.item');
       this.imgCnt = this.imgs.length;
 
       this.state = 'stop';
       this.repeat;
       this.ci = Math.floor(Math.random() * this.imgCnt); // 현재 가운데 이미지 랜덤
 
-      this.btnPrev = imgslide.querySelector('.buttons.nav>button.prev');
-      this.btnNext = imgslide.querySelector('.buttons.nav>button.next');
-      this.btnPlay = imgslide.querySelector('.buttons.page>button.play');
-      this.btnDots = imgslide.querySelectorAll('.buttons.page>button.dot');
+      this.btnPrev = slider.querySelector('.buttons.nav>button.prev');
+      this.btnNext = slider.querySelector('.buttons.nav>button.next');
+      this.btnPlay = slider.querySelector('.buttons.page>button.play');
+      this.btnDots = slider.querySelectorAll('.buttons.page>button.dot');
     }
 
     test() {
@@ -176,10 +176,9 @@
     // 시작
     play(to = true) {
       const imgCnt = this.imgCnt;
-      const btnPlay = this.btnPlay;
+      this.btnPlay;
       const delay = this.delay;
       if (to == true) {
-        btnPlay.classList.remove('stop');
         clearInterval(this.repeat);
         this.repeat = setInterval(()=>{
           this.ci++;
@@ -189,7 +188,6 @@
           this.slide();
         }, delay);
       } else {
-        btnPlay.classList.add('stop');
         clearInterval(this.repeat);
       }
     }
@@ -228,7 +226,7 @@
       this.state = 'play';
       this.slide();
       await HS.timeout(300);
-      this.imgslide.classList.add('active');
+      this.slider.classList.add('active');
       this.play(true);
       this.setBtnEvent();
     }
@@ -244,14 +242,18 @@
 
       // 버튼 재생 정지
       this.btnPlay.addEventListener('click', ()=>{
-        if (this.btnPlay.classList.contains('stop')) {
+        if (this.state == 'stop') {
+          this.btnPlay.classList.remove('stop');
+          this.state = 'play';
           this.play(true);
-          this.imgslide.addEventListener('mouseenter', stopEvent);
-          this.imgslide.addEventListener('mouseleave', playEvent);
-        } else {
+          this.slider.addEventListener('mouseenter', stopEvent);
+          this.slider.addEventListener('mouseleave', playEvent);
+        } else if (this.state == 'play') {
+          this.btnPlay.classList.add('stop');
+          this.state = 'stop';
           this.play(false);
-          this.imgslide.removeEventListener('mouseenter', stopEvent);
-          this.imgslide.removeEventListener('mouseleave', playEvent);
+          this.slider.removeEventListener('mouseenter', stopEvent);
+          this.slider.removeEventListener('mouseleave', playEvent);
         }
       });
 
@@ -263,11 +265,11 @@
         });
       });
 
-      // imgslide 호버
+      // slider 호버
       let playEvent = ()=>this.play(true);
       let stopEvent = ()=>this.play(false);
-      this.imgslide.addEventListener('mouseenter', stopEvent);
-      this.imgslide.addEventListener('mouseleave', playEvent);
+      this.slider.addEventListener('mouseenter', stopEvent);
+      this.slider.addEventListener('mouseleave', playEvent);
     }
   }
 
@@ -280,9 +282,8 @@
     // console.log("DOM LOADED");
     
     // 이미지슬라이드
-    const imgslide = document.querySelector('#imgslide');
-    const ImgSlide = new HS.ImgSlide(imgslide, 810, 20, 2500);
-    ImgSlide.test();
+    const slider = document.querySelector('#slider');
+    const ImgSlide = new HS.ImgSlide(slider, 810, 20, 2500);
     ImgSlide.start();
 
   };

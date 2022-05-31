@@ -1,22 +1,22 @@
 // 이미지슬라이드
 export class ImgSlide {
 
-  constructor(imgslide, imgWidth=1240, margin=20, delay=2500) {
-    this.imgslide = imgslide;
+  constructor(slider, imgWidth=1240, margin=20, delay=2500) {
+    this.slider = slider;
     this.imgWidth = imgWidth;
     this.margin = margin;
     this.delay = delay;
-    this.imgs = imgslide.querySelectorAll('.imgs>.item');
+    this.imgs = slider.querySelectorAll('.imgs>.item');
     this.imgCnt = this.imgs.length;
 
     this.state = 'stop';
     this.repeat;
     this.ci = Math.floor(Math.random() * this.imgCnt); // 현재 가운데 이미지 랜덤
 
-    this.btnPrev = imgslide.querySelector('.buttons.nav>button.prev');
-    this.btnNext = imgslide.querySelector('.buttons.nav>button.next');
-    this.btnPlay = imgslide.querySelector('.buttons.page>button.play');
-    this.btnDots = imgslide.querySelectorAll('.buttons.page>button.dot');
+    this.btnPrev = slider.querySelector('.buttons.nav>button.prev');
+    this.btnNext = slider.querySelector('.buttons.nav>button.next');
+    this.btnPlay = slider.querySelector('.buttons.page>button.play');
+    this.btnDots = slider.querySelectorAll('.buttons.page>button.dot');
   }
 
   test() {
@@ -55,7 +55,6 @@ export class ImgSlide {
     const btnPlay = this.btnPlay;
     const delay = this.delay;
     if (to == true) {
-      btnPlay.classList.remove('stop');
       clearInterval(this.repeat);
       this.repeat = setInterval(()=>{
         this.ci++;
@@ -65,7 +64,6 @@ export class ImgSlide {
         this.slide();
       }, delay);
     } else {
-      btnPlay.classList.add('stop');
       clearInterval(this.repeat);
     }
   }
@@ -104,7 +102,7 @@ export class ImgSlide {
     this.state = 'play';
     this.slide();
     await HS.timeout(300);
-    this.imgslide.classList.add('active');
+    this.slider.classList.add('active');
     this.play(true);
     this.setBtnEvent();
   }
@@ -120,14 +118,18 @@ export class ImgSlide {
 
     // 버튼 재생 정지
     this.btnPlay.addEventListener('click', ()=>{
-      if (this.btnPlay.classList.contains('stop')) {
+      if (this.state == 'stop') {
+        this.btnPlay.classList.remove('stop');
+        this.state = 'play';
         this.play(true);
-        this.imgslide.addEventListener('mouseenter', stopEvent);
-        this.imgslide.addEventListener('mouseleave', playEvent);
-      } else {
+        this.slider.addEventListener('mouseenter', stopEvent);
+        this.slider.addEventListener('mouseleave', playEvent);
+      } else if (this.state == 'play') {
+        this.btnPlay.classList.add('stop');
+        this.state = 'stop';
         this.play(false);
-        this.imgslide.removeEventListener('mouseenter', stopEvent);
-        this.imgslide.removeEventListener('mouseleave', playEvent);
+        this.slider.removeEventListener('mouseenter', stopEvent);
+        this.slider.removeEventListener('mouseleave', playEvent);
       }
     });
 
@@ -139,10 +141,10 @@ export class ImgSlide {
       });
     });
 
-    // imgslide 호버
+    // slider 호버
     let playEvent = ()=>this.play(true);
     let stopEvent = ()=>this.play(false);
-    this.imgslide.addEventListener('mouseenter', stopEvent);
-    this.imgslide.addEventListener('mouseleave', playEvent);
+    this.slider.addEventListener('mouseenter', stopEvent);
+    this.slider.addEventListener('mouseleave', playEvent);
   }
 }
