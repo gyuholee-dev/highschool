@@ -1,5 +1,4 @@
 // modules
-
 const gulp = require('gulp');
 // const gutil = require('gulp-util');
 const concat = require('gulp-concat');
@@ -77,7 +76,7 @@ gulp.task('css', async()=>{
 // gulp js
 gulp.task('js', async function () {
   const bundle = await rollup.rollup({
-    input: 'scripts/src/script.js',
+    input: 'scripts/src/main.js',
     plugins: [commonjs()]
   });
   bundle.write({
@@ -114,9 +113,10 @@ gulp.task('js-min', async function () {
 // gulp process
 
 // gulp watch
+// https://programmingsummaries.tistory.com/393
 gulp.task('watch', function () {
-  gulp.watch(sassFiles, ['css']);
-  gulp.watch(scriptFiles, ['js']);
+  gulp.watch(sassFiles, gulp.series('css'));
+  gulp.watch(scriptFiles, gulp.series('js'));
 });
 // gulp build
 gulp.task('build', async function () {
