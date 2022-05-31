@@ -255,6 +255,7 @@ main {
             z-index: 9;
             .btn {
               position: relative;
+              filter: drop-shadow(0 0 2px rgba(black, 0.5));
               &.prev {
                 // left: 0;
                 &::before {
