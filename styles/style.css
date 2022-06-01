@@ -3513,7 +3513,7 @@ body {
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: black;
   color: var(--color-text);
 }
 
