@@ -9,7 +9,7 @@
       position: fixed;
       width: 100%;
       height: 100%;
-      background-color: rgba(black, 0.5);
+      background-color: rgba(black, 0.65);
       z-index: 7;
       opacity: 0;
       display: none;
@@ -61,7 +61,7 @@
         &:not(:last-of-type) {
           border-bottom: 1px solid rgba(white, 0.25);
         }
-        &:hover {
+        &.active, &:hover {
           >a {
             background-color: rgba($sky, 0.25);
             color: white;

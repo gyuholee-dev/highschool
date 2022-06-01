@@ -225,7 +225,7 @@
     async start() {
       this.state = 'play';
       this.slide();
-      await HS.timeout(300);
+      await timeout(300);
       this.slider.classList.add('active');
       this.play(true);
       this.setBtnEvent();

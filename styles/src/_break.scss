@@ -8,8 +8,141 @@
     display: none;
   }
   // nav {} // _mobile.scss
+  main {
+    section {
+      padding: 0 20px;
+    }
+    section.top {
+      #slider {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 40px;
+        .imgs img {
+          width: auto;
+          height: 100%;
+        }
+      }
+      #schedule {
+        width: calc(50% - 10px);
+        margin-right: 20px;
+      }
+      #shortcut {
+        width:  calc(50% - 10px);
+        height: 350px;
+        grid-template-columns: repeat(3, 1fr);
+        .item {
+          width: auto;
+          height: auto;
+          margin: 5px;
+          img {
+            width: 60px;
+            height: auto;
+            margin-top: 0;
+            margin-bottom: 5px;
+          }
+          label {
+            font-size: 14px;
+            white-space: normal;
+            max-width: 70px;
+            max-height: 42px;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+
+    section.bottom {
+      #boards {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      #notice {
+        width: calc(50% - 10px);
+        height: 320px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+      #photos {
+        width: calc(50% - 10px);
+        margin-right: 0;
+        margin-bottom: 20px;
+        .post:not(:first-child) {
+          display: none;
+        }
+      }
+      #menu {
+        width: 100%;
+        height: 200px;
+        margin-right: 0;
+      }
+
+    }
+  }
+
+  footer {
+    .wrapper {
+      padding: 0 20px;
+    }
+    .top {
+      height: auto;
+      background-color: #173860;
+      .wrapper {
+        flex-wrap: wrap;
+        >* {
+          width: 100%;
+          text-align: center;
+        }
+        .policy {
+          height: 50px;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+
+}
+@include breakpoint(680) {
+  main {
+    section.bottom {
+      #boards {
+        height: auto;
+        flex-wrap: wrap;
+        .list {
+          width: 100%;
+          &:first-child {
+            border-right: 0;
+            border-bottom: 1px solid var(--color-border);
+          }
+        }
+      }
+    }
+  }
+
 }
 
 @include breakpoint(580) {
+  main {
+    section.top {
+      #schedule {
+        width: 100%;
+        margin-right: 0;
+      }
+      #shortcut {
+        width: 100%;
+      }
+    }
+
+    section.bottom {
+      #notice {
+        width: 100%;
+        margin-right: 0;
+      }
+      #photos {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
 
 }

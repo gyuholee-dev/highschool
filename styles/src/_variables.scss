@@ -46,8 +46,22 @@ $width-xxlarge: 1600px;
 @mixin flex($align:center, $justify:center, $direction:row, $wrap:nowrap) {
   display: flex;
   flex-direction: $direction;
-  align-items: $align;
-  justify-content: $justify;
+  // align-items: $align;
+  @if $align == start {
+    align-items: flex-start;
+  } @else if $align == end {
+    align-items: flex-end;
+  } @else {
+    align-items: $align;
+  }
+  // justify-content: $justify;
+  @if $justify == start {
+    justify-content: flex-start;
+  } @else if $justify == end {
+    justify-content: flex-end;
+  } @else {
+    justify-content: $justify;
+  }
   flex-wrap: $wrap;
 }
 
