@@ -72,7 +72,7 @@ gulp.task('css-min', async()=>{
 // gulp js-min
 gulp.task('js-min', async function () {
   const bundle = await rollup.rollup({
-    input: 'scripts/src/script.js',
+    input: 'scripts/src/main.js',
     plugins: [commonjs()]
   });
   bundle.write({
