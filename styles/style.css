@@ -3489,53 +3489,29 @@ i {
   margin-left: 0.3em;
 }
 
-@media (prefers-color-scheme: light) {
-  body {
-    --color-background: #ffffff;
-    --color-header: #ffffff;
-    --color-section: initial;
-    --color-footer: #ffffff;
-    --color-text: rgb(13, 13, 13);
-    --color-text-faint: rgb(51, 51, 51);
-    --color-text-emp: #000000;
-    --color-text-link: #0a7fd2;
-    --color-border: rgb(191, 191, 191);
-    --color-border-emp: #21abff;
-    --color-button: rgb(242, 242, 242);
-    --color-button-float: #ffffff;
-    --color-deactive: rgb(230, 230, 230);
-    --color-input: rgb(242, 242, 242);
-    --color-input-autofill: #e0ebff;
-    --color-box-grey: rgb(242, 242, 242);
-    --color-box-blue: aliceblue;
-    --color-box-antique: antiquewhite;
-    --color-box-emp: rgba(41, 205, 255, 0.15);
-    --color-light: #ffffff;
-  }
+body {
+  --color-background: #ffffff;
+  --color-header: #ffffff;
+  --color-section: initial;
+  --color-footer: #ffffff;
+  --color-text: rgb(13, 13, 13);
+  --color-text-faint: rgb(51, 51, 51);
+  --color-text-emp: #000000;
+  --color-text-link: #0a7fd2;
+  --color-border: rgb(191, 191, 191);
+  --color-border-emp: #21abff;
+  --color-button: rgb(242, 242, 242);
+  --color-button-float: #ffffff;
+  --color-deactive: rgb(230, 230, 230);
+  --color-input: rgb(242, 242, 242);
+  --color-input-autofill: #e0ebff;
+  --color-box-grey: rgb(242, 242, 242);
+  --color-box-blue: aliceblue;
+  --color-box-antique: antiquewhite;
+  --color-box-emp: rgba(41, 205, 255, 0.15);
+  --color-light: #ffffff;
 }
-@media (prefers-color-scheme: dark) {
-  body {
-    --color-background: rgb(26, 26, 26);
-    --color-header: #000000;
-    --color-section: initial;
-    --color-footer: #000000;
-    --color-text: rgb(204, 204, 204);
-    --color-text-faint: rgb(166, 166, 166);
-    --color-text-emp: #ffffff;
-    --color-text-link: #0a7fd2;
-    --color-border: rgb(89, 89, 89);
-    --color-border-emp: #21abff;
-    --color-button: rgb(13, 13, 13);
-    --color-button-float: rgb(13, 13, 13);
-    --color-deactive: rgb(13, 13, 13);
-    --color-input: #000000;
-    --color-input-autofill: #0d2a2b;
-    --color-box-grey: rgb(26, 26, 26);
-    --color-box-blue: #0f1a24;
-    --color-box-antique: #24170f;
-    --color-light: rgb(64, 64, 64);
-  }
-}
+
 body {
   background-color: var(--color-background);
   color: var(--color-text);

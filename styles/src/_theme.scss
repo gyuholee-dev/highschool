@@ -1,5 +1,5 @@
 // theme
-@media (prefers-color-scheme: light) {
+// @media (prefers-color-scheme: light) {
   body {
     --color-background: #{$white};
     --color-header: #{$white};
@@ -26,34 +26,7 @@
 
     --color-light: #{$white};
   }
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    --color-background: #{$grey-10};
-    --color-header: #{$black};
-    --color-section: initial;
-    --color-footer: #{$black};
-    
-    --color-text: #{$grey-80};
-    --color-text-faint: #{$grey-65};
-    --color-text-emp: #{$white};
-    --color-text-link: #{$blue};
-    --color-border: #{$grey-35};
-    --color-border-emp: #{$sky};
-    
-    --color-button: #{$grey-5};
-    --color-button-float: #{$grey-5};
-    --color-deactive: #{$grey-5};
-    --color-input: #{$black};
-    --color-input-autofill: #0d2a2b;
-    
-    --color-box-grey: #{$grey-10};
-    --color-box-blue: #0f1a24;
-    --color-box-antique: #24170f;
-    
-    --color-light: #{$grey-25};
-  }
-}
+// }
 
 body {
   background-color: var(--color-background);
