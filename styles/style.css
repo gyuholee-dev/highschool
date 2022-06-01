@@ -4342,7 +4342,22 @@ main section .box .header label {
   padding: 0 10px;
   margin: 0;
 }
-main section .box .header a {
+main section .box .header a.more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   width: 35px;
   height: 35px;
   line-height: 35px;
@@ -4351,6 +4366,46 @@ main section .box .header a {
 main section .box .body {
   width: 100%;
   height: 100%;
+}
+main section .list .header a.more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: -5px;
+  text-align: center;
+}
+main section .box .header a.more > i, main section .list .header a.more > i {
+  font-size: 20px;
+  position: absolute;
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
+}
+main section .box .header a.more > i:first-child, main section .list .header a.more > i:first-child {
+  opacity: 1;
+}
+main section .box .header a.more > i:last-child, main section .list .header a.more > i:last-child {
+  opacity: 0;
+}
+main section .box .header a.more:hover > i:first-child, main section .list .header a.more:hover > i:first-child {
+  opacity: 0;
+}
+main section .box .header a.more:hover > i:last-child, main section .list .header a.more:hover > i:last-child {
+  opacity: 1;
 }
 main section.top #caster {
   display: -webkit-box;
@@ -4733,10 +4788,6 @@ main section.bottom #boards .list .header .btn {
 main section.bottom #boards .list .header .btn:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-}
-main section.bottom #boards .list .header .more {
-  width: 40px;
-  text-align: center;
 }
 main section.bottom #boards .list .header .more:hover {
   color: var(--color-text-link);

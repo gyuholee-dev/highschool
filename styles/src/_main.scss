@@ -242,7 +242,8 @@ main {
           padding: 0 10px;
           margin: 0;
         }
-        a {
+        a.more {
+          @include flex(center, center);
           width: 35px;
           height: 35px;
           line-height: 35px;
@@ -254,6 +255,45 @@ main {
         height: 100%;
       }
     }
+    .list {
+      .header {
+        a.more {
+          @include flex(center, center);
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          margin-right: -5px;
+          text-align: center;
+        }
+      }
+    }
+
+    .box, .list {
+      .header {
+        a.more {
+          >i {
+            font-size: 20px;
+            position: absolute;
+            transition: opacity 0.15s;
+            &:first-child {
+              opacity: 1;
+            }
+            &:last-child {
+              opacity: 0;
+            }
+          }
+          &:hover {
+            >i:first-child {
+              opacity: 0;
+            }
+            >i:last-child {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    } 
+
   }
 
   // 섹션 상단
@@ -486,8 +526,6 @@ main {
             }
           }
           .more {
-            width: 40px;
-            text-align: center;
             &:hover {
               color: var(--color-text-link);
             }
