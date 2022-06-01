@@ -4,6 +4,7 @@ export {
   toggleActive,
   toggleMenu,
   toggleSubMenu,
+  changeTab,
 };
 
 // 딤 토글
@@ -71,4 +72,16 @@ async function toggleSubMenu(menu) {
     const targetMenu = menu.querySelector('.submenu');
     targetMenu.classList.toggle('open');
   }
+}
+
+// 탭 선택
+function changeTab(elem, id) {
+  const tabs = elem.querySelectorAll('.tab');
+  const items = elem.querySelectorAll('.item');
+  for (let i = 0; i < tabs.length; i++) {
+    tabs[i].classList.remove('active');
+    items[i].classList.remove('active');
+  }
+  elem.querySelector('#tab_'+id).classList.add('active');
+  elem.querySelector('#item_'+id).classList.add('active');
 }

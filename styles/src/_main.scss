@@ -485,10 +485,16 @@ main {
         }
         .body {
           width: 100%;
+          height: 100%;
           padding: 10px;
-          table {
+          table.item {
             width: inherit;
+            height: inherit;
             table-layout: fixed;
+            display: none;
+            &.active {
+              display: table;
+            }
             tr {
               width: inherit;
             }
@@ -498,6 +504,10 @@ main {
             td {
               overflow: hidden;
               text-overflow: ellipsis;
+              &.empty {
+                width: 100%;
+                text-align: center;
+              }
               a:hover {
                 color: var(--color-text-link);
               }

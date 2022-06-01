@@ -4730,23 +4730,33 @@ main section.bottom #boards .list .header .more:hover {
 }
 main section.bottom #boards .list .body {
   width: 100%;
+  height: 100%;
   padding: 10px;
 }
-main section.bottom #boards .list .body table {
+main section.bottom #boards .list .body table.item {
   width: inherit;
+  height: inherit;
   table-layout: fixed;
+  display: none;
 }
-main section.bottom #boards .list .body table tr {
+main section.bottom #boards .list .body table.item.active {
+  display: table;
+}
+main section.bottom #boards .list .body table.item tr {
   width: inherit;
 }
-main section.bottom #boards .list .body table tr td:last-child {
+main section.bottom #boards .list .body table.item tr td:last-child {
   width: 90px;
 }
-main section.bottom #boards .list .body table td {
+main section.bottom #boards .list .body table.item td {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-main section.bottom #boards .list .body table td a:hover {
+main section.bottom #boards .list .body table.item td.empty {
+  width: 100%;
+  text-align: center;
+}
+main section.bottom #boards .list .body table.item td a:hover {
   color: var(--color-text-link);
 }
 main section.bottom #notice {

@@ -114,12 +114,25 @@
     }
   }
 
+  // 탭 선택
+  function changeTab(elem, id) {
+    const tabs = elem.querySelectorAll('.tab');
+    const items = elem.querySelectorAll('.item');
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove('active');
+      items[i].classList.remove('active');
+    }
+    elem.querySelector('#tab_'+id).classList.add('active');
+    elem.querySelector('#item_'+id).classList.add('active');
+  }
+
   var ui = /*#__PURE__*/Object.freeze({
     __proto__: null,
     toggleDimm: toggleDimm,
     toggleActive: toggleActive,
     toggleMenu: toggleMenu,
-    toggleSubMenu: toggleSubMenu
+    toggleSubMenu: toggleSubMenu,
+    changeTab: changeTab
   });
 
   // 이미지슬라이드

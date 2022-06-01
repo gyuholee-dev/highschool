@@ -264,13 +264,13 @@
         <div id="boards">
           <div id="board_notice" class="list">
             <div class="header tabs">
-              <button id="tab_a01" class="btn tab active" onclick="changeTab(board_notice, 'a01')">공지사항</button>
-              <button id="tab_a02" class="btn tab" onclick="changeTab(board_notice, 'a02')">가정통신문</button>
-              <button id="tab_a03" class="btn tab" onclick="changeTab(board_notice, 'a03')">교육계획서</button>
+              <button id="tab_a01" class="btn tab active" onclick="HS.changeTab(board_notice, 'a01')">공지사항</button>
+              <button id="tab_a02" class="btn tab" onclick="HS.changeTab(board_notice, 'a02')">가정통신문</button>
+              <button id="tab_a03" class="btn tab" onclick="HS.changeTab(board_notice, 'a03')">교육계획서</button>
               <a class="more" href="#"><i class="xi-plus"></i></a>
             </div>
             <div class="body">
-              <table id="item_a01" class="active">
+              <table id="item_a01" class="item active">
                 <tr>
                   <td><a href="#">학교발전기금 조성 운용 안내</a></td>
                   <td>2022.05.30</td>
@@ -292,17 +292,61 @@
                   <td>2022.05.20</td>
                 </tr>
               </table>
+              <table id="item_a02" class="item">
+                <tr>
+                  <td><a href="#">제42호-신입생(현1학년) 및 학부모 대상 교육과정 설명회 안내</a></td>
+                  <td>2022.05.23</td>
+                </tr>
+                <tr>
+                  <td><a href="#">제38호-학교폭력예방 일기예보 프로젝트 5월 안내</a></td>
+                  <td>2022.05.12</td>
+                </tr>
+                <tr>
+                  <td><a href="#">제41호-2022학년도 5월 청탁금지법 가정통신문</a></td>
+                  <td>2022.05.12</td>
+                </tr>
+                <tr>
+                  <td><a href="#">제40호-2022학년도 학교폭력예방에 관한 학부모 연수 자료 안내문</a></td>
+                  <td>2022.05.12</td>
+                </tr>
+                <tr>
+                  <td><a href="#">제39호-2022학년도 1학년 하복 체육복 가정통신문 안내</a></td>
+                  <td>2022.05.09</td>
+                </tr>
+              </table>
+              <table id="item_a03" class="item">
+                <tr>
+                  <td><a href="#">2022학년도 부산고등학교 교육계획서</a></td>
+                  <td>2022.04.21</td>
+                </tr>
+                <tr>
+                  <td><a href="#">2021학년도 부산고등학교 교육계획서</a></td>
+                  <td>2021.04.19</td>
+                </tr>
+                <tr>
+                  <td><a href="#">2020학년도 교육계획서</a></td>
+                  <td>2020.11.03</td>
+                </tr>
+                <tr>
+                  <td><a href="#">2019학년도 부산고등학교 교육계획</a></td>
+                  <td>2019.03.08</td>
+                </tr>
+                <tr>
+                  <td><a href="#">2018학년도 부산고등학교 교육계획</a></td>
+                  <td>2018.03.09</td>
+                </tr>
+              </table>
             </div>
           </div>
           <div id="board_free" class="list">
             <div class="header tabs">
-              <button id="tab_b01" class="btn tab active" onclick="changeTab(board_free, 'b01')">열린게시판</button>
-              <button id="tab_b02" class="btn tab" onclick="changeTab(board_free, 'b02')">기숙사</button>
-              <button id="tab_b03" class="btn tab" onclick="changeTab(board_free, 'b03')">학습Q&A</button>
+              <button id="tab_b01" class="btn tab active" onclick="HS.changeTab(board_free, 'b01')">열린게시판</button>
+              <button id="tab_b02" class="btn tab" onclick="HS.changeTab(board_free, 'b02')">기숙사</button>
+              <button id="tab_b03" class="btn tab" onclick="HS.changeTab(board_free, 'b03')">학습Q&A</button>
               <a class="more" href="#"><i class="xi-plus"></i></a>
             </div>
             <div class="body">
-              <table id="item_b01" class="active">
+              <table id="item_b01" class="item active">
                 <tr>
                   <td><a href="#">2022년 교내 토론 한마당 예선 안내 및 서류 양식</a></td>
                   <td>2022.05.18</td>
@@ -323,6 +367,31 @@
                   <td><a href="#">2022년도 '학생 스포츠 기자단' 모집</a></td>
                   <td>2022.04.26</td>
                 </tr>
+              </table>
+              <table id="item_b02" class="item">
+                <tr>
+                  <td><a href="#">기숙사 운영규정(선발 등)</a>
+                  <td>2019.12.27</td>
+                </tr>
+                <tr>
+                  <td><a href="#">2018학년도 2학기 기숙사 입사자 명단 및 입사안내문</a>
+                  <td>2018.07.30</td>
+                </tr>
+                <tr>
+                  <td><a href="#">2018 기숙사 학년 연계 멘토링 계획</a>
+                  <td>2018.04.18</td>
+                </tr>
+                <tr>
+                  <td><a href="#">2018 기숙사 관리 및 운영 방안</a>
+                  <td>2018.04.18</td>
+                </tr>
+                <tr>
+                  <td><a href="#">2018 기숙사 학부모 총회 안내</a>
+                  <td>2018.04.18</td>
+                </tr>
+              </table>
+              <table id="item_b03" class="item">
+                <tr><td class="empty">목록이 없습니다.</td></tr>
               </table>
             </div>
           </div>
