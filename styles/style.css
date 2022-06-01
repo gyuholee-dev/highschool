@@ -3792,7 +3792,6 @@ input[type=reset]:disabled {
   background-color: var(--color-button);
   color: inherit;
   opacity: 0.5;
-  pointer-events: none;
 }
 
 .btn.inline {
@@ -4700,7 +4699,7 @@ main section.top #shortcut .item img {
   margin-top: 18px;
   margin-bottom: 13px;
 }
-main section.top #shortcut .item label {
+main section.top #shortcut .item .label {
   font-weight: 500;
   margin: 0;
   text-align: center;
@@ -5075,7 +5074,7 @@ footer .bottom .info {
     margin-top: 0;
     margin-bottom: 5px;
   }
-  main section.top #shortcut .item label {
+  main section.top #shortcut .item .label {
     font-size: 14px;
     white-space: normal;
     max-width: 70px;
