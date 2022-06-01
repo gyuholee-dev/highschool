@@ -4294,6 +4294,9 @@ main section {
       flex-wrap: wrap;
   margin-bottom: 30px;
 }
+main section > h3.title {
+  display: none;
+}
 main section .box {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -224,6 +224,9 @@ main {
     // &:not(:last-of-type) {
     //   margin-bottom: 30px;
     // }
+    >h3.title {
+      display: none;
+    }
 
     .box {
       @include flex(center, start, column);
