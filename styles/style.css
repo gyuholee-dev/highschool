@@ -4360,6 +4360,7 @@ main section .box .header a.more {
       flex-wrap: nowrap;
   width: 35px;
   height: 35px;
+  margin-right: -5px;
   line-height: 35px;
   text-align: center;
 }
@@ -4832,6 +4833,39 @@ main section.bottom #notice {
 main section.bottom #notice .header {
   background-color: #22b24c;
   color: white;
+}
+main section.bottom #notice .body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+main section.bottom #notice .body .item {
+  position: absolute;
+  height: inherit;
+}
+main section.bottom #notice .body .item > img {
+  height: inherit;
+  width: auto;
+}
+main section.bottom #notice.active .body .item {
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  transition: transform 0.35s, -webkit-transform 0.35s;
 }
 main section.bottom #photos {
   width: calc(75% - 10px);

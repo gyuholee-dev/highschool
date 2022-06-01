@@ -246,6 +246,7 @@ main {
           @include flex(center, center);
           width: 35px;
           height: 35px;
+          margin-right: -5px;
           line-height: 35px;
           text-align: center;
         }
@@ -574,6 +575,22 @@ main {
       .header {
         background-color: #22b24c;
         color: white;
+      }
+      .body {
+        @include flex(center, center, column);
+        position: relative;
+        overflow: hidden;
+        .item {
+          position: absolute;
+          height: inherit;
+          >img {
+            height: inherit;
+            width: auto;
+          }
+        }
+      }
+      &.active .body .item {
+        transition: transform 0.35s;
       }
     }
     #photos {
