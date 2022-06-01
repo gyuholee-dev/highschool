@@ -5068,6 +5068,7 @@ main section.bottom #menu .body {
   background-size: 80px;
   background-blend-mode: screen;
   padding: 15px;
+  overflow: hidden;
 }
 main section.bottom #menu .body .title {
   font-size: 18px;
@@ -5078,6 +5079,10 @@ main section.bottom #menu .body .title {
 }
 main section.bottom #menu .body p {
   padding: 0 10px;
+}
+main section.bottom #menu .body p::before {
+  content: "•";
+  margin-right: 5px;
 }
 
 footer {
@@ -5107,10 +5112,74 @@ footer .sep::after {
   content: "|";
 }
 footer #banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   height: 75px;
   width: 100%;
   background-color: var(--color-header);
   border-top: 1px solid var(--color-border);
+}
+footer #banner .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+  height: inherit;
+}
+footer #banner .items .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 45px;
+}
+footer #banner .items .item a {
+  height: 45px;
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+footer #banner .items .item a img {
+  height: inherit;
+  width: auto;
 }
 footer .top {
   height: 50px;
@@ -5213,12 +5282,21 @@ footer .bottom .info {
   }
   main section.bottom #menu {
     width: 100%;
-    height: 200px;
+    height: 280px;
     margin-right: 0;
   }
 
   footer .wrapper {
     padding: 0 20px;
+  }
+  footer #banner {
+    height: auto;
+    padding: 20px 0;
+  }
+  footer #banner .items .item {
+    height: auto;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   footer .top {
     height: auto;

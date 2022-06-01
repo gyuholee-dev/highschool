@@ -720,6 +720,7 @@ main {
         background-size: 80px;
         background-blend-mode: screen;
         padding: 15px;
+        overflow: hidden;
         .title {
           font-size: 18px;
           font-weight: 500;
@@ -729,6 +730,10 @@ main {
         }
         p {
           padding: 0 10px;
+          &::before {
+            content: "•";
+            margin-right: 5px;
+          }
         }
       }
     }
@@ -749,10 +754,30 @@ footer {
     margin: 0 5px;
   }
   #banner {
+    @include flex(center, center);
     height: 75px;
     width: 100%;
     background-color: var(--color-header);
     border-top: 1px solid var(--color-border);
+    .items {
+      @include flex(center, center);
+      width: 100%;
+      height: inherit;
+      .item {
+        @include flex(center, center);
+        height: 45px;
+        a {
+          height: 45px;
+          display: block;
+          flex-grow: 1;
+          text-align: center;
+          img {
+            height: inherit;
+            width: auto;
+          }
+        }
+      }
+    }
   }
   .top {
     height: 50px;
