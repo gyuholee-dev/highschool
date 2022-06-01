@@ -3,6 +3,8 @@ const gulp = require('gulp');
 // const gutil = require('gulp-util');
 const concat = require('gulp-concat');
 // const rename = require('gulp-rename');
+// https://github.com/postcss/autoprefixer#options
+const autoprefixer = require('gulp-autoprefixer');
 
 const rollup = require('rollup');
 const commonjs = require('rollup-plugin-commonjs');
@@ -37,39 +39,11 @@ var scriptFiles = getSrc(jsPaths, 'js');
 // -----------------------------------------------------------------
 // gulp tasks
 
-// gulp.task('css', async()=>{
-//   return gulp.src(sassFiles)
-//     .pipe(sass())
-//     .pipe(concat('style.css'))
-//     .pipe(gulp.dest('./styles/'))
-//     .pipe(sass({outputStyle: 'compressed'}))
-//     .pipe(rename({suffix: '.min'}))
-//     .pipe(gulp.dest('./styles/'));
-// });
-// gulp.task('js', async function () {
-//   const bundle = await rollup.rollup({
-//     input: 'scripts/src/script.js',
-//     plugins: [commonjs()]
-//   });
-//   bundle.write({
-//     file: 'scripts/script.js',
-//     format: 'iife',
-//     name: 'bundle',
-//     sourcemap: false,
-//   });
-//   bundle.write({
-//     file: 'scripts/script.min.js',
-//     format: 'iife',
-//     name: 'compressed',
-//     sourcemap: false,
-//     plugins: [terser()]
-//   });
-// });
-
 // gulp css
 gulp.task('css', async()=>{
   return gulp.src(sassFiles)
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({overrideBrowserslist: ['last 2 versions']}))
     .pipe(concat('style.css'))
     .pipe(gulp.dest('./styles/'));
 });
@@ -90,6 +64,7 @@ gulp.task('js', async function () {
 gulp.task('css-min', async()=>{
   return gulp.src(sassFiles)
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(autoprefixer({overrideBrowserslist: ['last 2 versions']}))
     .pipe(concat('style.min.css'))
     // .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./styles/'));
