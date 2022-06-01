@@ -54,7 +54,6 @@ export class ImgSlide {
   // 시작
   play(to = true) {
     const imgCnt = this.imgCnt;
-    const btnPlay = this.btnPlay;
     const delay = this.delay;
     if (to == true) {
       clearInterval(this.repeat);
@@ -106,13 +105,13 @@ export class ImgSlide {
     await timeout(300);
     this.slider.classList.add('active');
     this.play(true);
-    this.setBtnEvent();
+    this.setEvent();
   }
 
   // -------------------------------------------------------
   // 컨트롤
 
-  setBtnEvent() {
+  setEvent() {
     // 버튼 이전
     this.btnPrev.addEventListener('click', ()=>this.prev());
     // 버튼 다음

@@ -4406,10 +4406,23 @@ main section.top #caster .items {
   width: 100%;
   height: inherit;
   position: relative;
+  background-color: white;
+  z-index: 1;
 }
 main section.top #caster .items .item {
+  width: inherit;
   padding: 0 15px;
   position: absolute;
+  background-color: white;
+}
+main section.top #caster .items .item:hover {
+  color: var(--color-text-link);
+}
+main section.top #caster.active .items > .item {
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  transition: transform 0.35s, -webkit-transform 0.35s;
 }
 main section.top #slider {
   display: -webkit-box;

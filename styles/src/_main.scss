@@ -284,10 +284,20 @@ main {
         width: 100%;
         height: inherit;
         position: relative;
+        background-color: white;
+        z-index: 1;
         .item {
+          width: inherit;
           padding: 0 15px;
           position: absolute;
+          background-color: white;
+          &:hover {
+            color: var(--color-text-link);
+          }
         }
+      }
+      &.active .items>.item {
+        transition: transform 0.35s;
       }
     }
 
