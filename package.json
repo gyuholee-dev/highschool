@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "프론트엔드개발 수업 과제. 부산고등학교 웹사이트 https://school.busanedu.net/busan-h/main.do 메인페이지 카피.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "watch": "gulp watch",
+    "build": "gulp build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leegyuho-dev/highschool.git"
@@ -17,6 +20,7 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^5.1.0",
     "rollup": "^2.75.3",

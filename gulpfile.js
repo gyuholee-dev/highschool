@@ -88,12 +88,16 @@ gulp.task('js-min', async function () {
 // gulp process
 
 // gulp watch
+// $ npm watch
+// $ npx gulp watch
 // https://programmingsummaries.tistory.com/393
 gulp.task('watch', function () {
   gulp.watch(sassFiles, gulp.series('css'));
   gulp.watch(scriptFiles, gulp.series('js'));
 });
 // gulp build
+// $ npm build
+// $ npx gulp build
 gulp.task('build', async function () {
   gulp.parallel(
     'css', 'css-min', 
